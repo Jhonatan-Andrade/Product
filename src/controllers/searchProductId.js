@@ -2,13 +2,13 @@
 
 const Product = require('../models/SchemaProduct')
 
-let searchProduct= async(req, res)=>{
+let searchProductId= async(req, res)=>{
     try {
-        let product = await Product.find()
+        let product = await Product.find({_id:req.body.id})
         return res.json(product)
     } catch (error) {
         return res.json({error})
     }
    
 }
-module.exports = searchProduct
+module.exports = searchProductId

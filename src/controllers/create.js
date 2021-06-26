@@ -16,10 +16,6 @@ let createProduct = async(req, res)=>{
     
         return res.send({"error":'medida invalido'})  
 
-    }else if(!req.body[0].tipo){
-    
-        return res.send({"error":'tipo invalida'})  
-
     }else{
         try {
             let product = await Product.create(req.body)
